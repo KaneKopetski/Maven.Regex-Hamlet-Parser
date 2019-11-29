@@ -15,17 +15,35 @@ public class HamletParserTest {
 
     @Test
     public void testChangeHamletToLeon() {
+        String toChange = hamletParser.changeHamlet("Leon");
+
+        Integer expected = 0;
+
+        assertEquals(expected, hamletParser.countHamlet(hamletParser.changeHamlet("Leon")));
+
+        assertTrue(toChange.contains("Leon"));
     }
 
     @Test
     public void testChangeHoratioToTariq() {
+        Integer expected = 0;
+        String toChange = hamletParser.changeHoratio("Tariq");
+        assertEquals(expected, hamletParser.countHortatio(toChange));
+
+        assertTrue(toChange.contains("Tariq"));
     }
 
     @Test
-    public void testFindHoratio() {
+    public void testCountHoratio() {
+        Integer expected = 158;
+
+        assertEquals(expected, hamletParser.countHortatio(hamletText));
     }
 
     @Test
-    public void testFindHamlet() {
+    public void testCountHamlet() {
+        Integer expected = 472;
+
+        assertEquals(expected, hamletParser.countHamlet(hamletText));
     }
 }
